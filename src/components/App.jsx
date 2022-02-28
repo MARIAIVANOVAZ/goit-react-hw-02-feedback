@@ -15,10 +15,11 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    return Object.values(this.state).reduce(
-      (previousValue, currentValue) => previousValue + currentValue,
-      0
-    );
+    const { good, neutral, bad } = this.state;
+    // return Object.values(this.state).reduce(
+    //   (previousValue, currentValue) => previousValue + currentValue,
+    //   0
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
